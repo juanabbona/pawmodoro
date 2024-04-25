@@ -1,0 +1,28 @@
+.customization-actions {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.customization-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 80px;
+}
+
+.customization-section-title {
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.customization-color,
+.customization-break-time {
+  
+  @apply flex-1 flex items-center gap-3
+}
+
+
+
