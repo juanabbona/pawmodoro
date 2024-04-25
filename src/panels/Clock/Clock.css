@@ -1,0 +1,33 @@
+.clock-root {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.clock-header {
+  display: flex;
+  align-items: start;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.clock-customize-button {
+  width: 110px;
+}
+
+.clock-time {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 24px;
+}
+
+.clock-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  height: 128px;
+}
