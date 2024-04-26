@@ -1,0 +1,11 @@
+.bg-amber-gradient {
+  @apply bg-gradient-to-br from-amber-500 to-amber-200;
+}
+
+.bg-purple-gradient {
+  @apply bg-gradient-to-br from-purple-700 to-purple-300;
+}
+
+.bg-teal-gradient {
+  @apply bg-gradient-to-br from-cyan-600 to-teal-300;
+}

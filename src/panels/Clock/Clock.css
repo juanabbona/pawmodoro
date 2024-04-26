@@ -6,14 +6,11 @@
 }
 
 .clock-header {
-  display: flex;
-  align-items: start;
-  justify-content: flex-end;
-  padding: 24px;
+  @apply flex items-center justify-end p-6;
 }
 
 .clock-customize-button {
-  width: 110px;
+  @apply w-28 opacity-100 transition-opacity
 }
 
 .clock-time {

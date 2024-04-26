@@ -1,9 +1,8 @@
-import IconButton from "components/IconButton";
 import { useSettings } from "context/SettingsContext/SettingsContext";
 import { ThemeName } from "theme/types";
 import "./CustomizationActions.css";
-import { CustomizationActionsProps } from "./CustomizationActions.types";
 import { theme } from "theme";
+import classNames from "classnames";
 
 const BREAK_TIME_OPTIONS = [
   { label: "5'", value: 5 * 60 },
@@ -23,25 +22,33 @@ const CustomizationActions = () => {
     <div className="customization-actions">
       <div className="customization-section">
         <span className="customization-section-title">Color scheme</span>
-        <div className="">
-          {Object.keys(theme)
-            .map((name) => ({
-              name,
-              value: theme[name as ThemeName],
-            }))
-            .map(({ name, value }) => (
-              <IconButton
-                size={settings.theme === name ? "medium" : "small"}
-                color={settings.theme === name ? "light" : "transparent"}
-                onClick={handleThemeButtonClick(name as ThemeName)}
-                className="p-1"
-              >
-                <div
-                  className="w-full h-full rounded-full"
-                  style={{ background: value.background }}
-                />
-              </IconButton>
-            ))}
+        <div className="customization-break-time">
+          {Object.keys(theme).map((name) => (
+            <button
+              onClick={handleThemeButtonClick(name as ThemeName)}
+              className={classNames(
+                "icon-button",
+                "transition-all",
+                "duration-30",
+                "ease-in-out",
+                "p-1",
+                {
+                  md: settings.theme !== name,
+                  lg: settings.theme === name,
+                  transparent: settings.theme !== name,
+                }
+              )}
+            >
+              <div
+                className={classNames(
+                  "w-full",
+                  "h-full",
+                  "rounded-full",
+                  `bg-${name}-gradient`
+                )}
+              />
+            </button>
+          ))}
         </div>
       </div>
       <div className="w-0.5 h-7 bg-white mt-6 bg-opacity-20 rounded-md"></div>
@@ -49,13 +56,23 @@ const CustomizationActions = () => {
         <span className="customization-section-title">Break duration</span>
         <div className="customization-break-time">
           {BREAK_TIME_OPTIONS.map(({ label, value }) => (
-            <IconButton
-              size={settings.breakTime === value ? "medium" : "small"}
-              color={settings.breakTime === value ? "light" : "transparent"}
+            <button
               onClick={handleBreakTimeButtonClick(value)}
+              className={classNames(
+                "icon-button",
+                "transition-all",
+                "duration-30",
+                "ease-in-out",
+                "p-1",
+                {
+                  md: value !== settings.breakTime,
+                  lg: value === settings.breakTime,
+                  transparent: value !== settings.breakTime,
+                }
+              )}
             >
               {label}
-            </IconButton>
+            </button>
           ))}
         </div>
       </div>

@@ -1,0 +1,19 @@
+.icon-button {
+  @apply rounded-full bg-white text-gray-700 shadow-lg flex justify-center items-center size-9;
+}
+
+.icon-button.sm {
+  @apply size-9 text-sm;
+}
+
+.icon-button.md {
+  @apply size-11 text-sm;
+}
+
+.icon-button.lg {
+  @apply size-14 font-semibold text-xl;
+}
+
+.icon-button.transparent {
+  @apply text-white bg-opacity-20;
+}

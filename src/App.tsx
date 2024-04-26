@@ -1,11 +1,16 @@
 import "./App.css";
-import SettingsProvider from "./context/SettingsContext/SettingsContext";
+
+import { TimerProvider } from "context/TimerContext";
+import { SettingsProvider } from "./context/SettingsContext";
+
 import Clock from "./panels/Clock/Clock";
 
 function App() {
   return (
     <SettingsProvider>
-      <Clock />
+      <TimerProvider>
+        <Clock />
+      </TimerProvider>
     </SettingsProvider>
   );
 }
